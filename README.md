@@ -1,169 +1,142 @@
-# TaskFlow - Collaborative Task Management System
+# Task Management System
 
-## SESD Project Milestone-1 Submission
+## SESD Project - Milestone 1
 
-A full-stack task management application built with Spring Boot and React, emphasizing software engineering principles, OOP concepts, and design patterns.
+A task management web application for teams to manage projects and tasks efficiently.
 
-## Project Documentation
+## Project Idea
 
-This repository contains the complete project documentation for Milestone-1:
+We're building a task management system where teams can create projects, assign tasks to members, track progress, and collaborate. Think of it like a simplified version of Jira or Trello but focused on core features.
 
-- **[useCaseDiagram.md](./useCaseDiagram.md)** - Use case diagram with actors and interactions
-- **[sequenceDiagram.md](./sequenceDiagram.md)** - Sequence diagram showing end-to-end flow
-- **[classDiagram.md](./classDiagram.md)** - Class diagram with OOP principles and design patterns
-- **[ErDiagram.md](./ErDiagram.md)** - Entity-relationship diagram with database schema
+Main features we plan to implement:
+- User login/signup with different roles (admin, manager, team member)
+- Create projects and add team members
+- Create tasks, assign them, set priorities and deadlines
+- Comment on tasks for discussion
+- Dashboard to see task statistics
+- Email notifications when tasks are assigned
 
-## Project Overview
+## Documentation Files
 
-TaskFlow is a collaborative task management system that enables teams to:
-- Create and manage projects
-- Assign and track tasks
-- Collaborate through comments
-- Receive real-time notifications
-- View analytics and progress metrics
+- [useCaseDiagram.md](./useCaseDiagram.md) - Shows different user types and what they can do
+- [sequenceDiagram.md](./sequenceDiagram.md) - How task creation works step by step
+- [classDiagram.md](./classDiagram.md) - Backend structure with classes and relationships
+- [ErDiagram.md](./ErDiagram.md) - Database tables and how they connect
 
-## Architecture
+## Tech Stack
 
-### Backend (75% Focus)
-- **Language**: Java 17
-- **Framework**: Spring Boot 3.x
-- **Database**: PostgreSQL 15
-- **ORM**: Hibernate (JPA)
-- **Security**: Spring Security + JWT
-- **Architecture**: Layered (Controller → Service → Repository → Entity)
+### Backend (main focus - 75%)
+- Java with Spring Boot
+- PostgreSQL database
+- JWT for authentication
+- Hibernate for database operations
 
-### Frontend (25% Focus)
-- **Framework**: React 18
-- **State Management**: Redux Toolkit
-- **UI Library**: Material-UI (MUI)
+### Frontend (25%)
+- React for UI
+- Material-UI for components
+- Axios for API calls
 
-## Software Engineering Practices
+## OOP & Design Patterns
 
-### OOP Principles
-- **Encapsulation**: Private fields with controlled access
-- **Abstraction**: Interface-based repository and service layers
-- **Inheritance**: Base entity classes for common fields
-- **Polymorphism**: Strategy pattern for notifications
+We're using proper OOP concepts:
+- Encapsulation - keeping data private with getters/setters
+- Abstraction - using interfaces for repositories
+- Inheritance - base entity class for common fields like id, timestamps
+- Polymorphism - different notification types (email, in-app)
 
-### Design Patterns
-- **Repository Pattern**: Data access abstraction
-- **Service Layer Pattern**: Business logic separation
-- **DTO Pattern**: API contract decoupling
-- **Factory Pattern**: Entity creation
-- **Strategy Pattern**: Notification delivery
-- **Observer Pattern**: Event-driven notifications
-- **Dependency Injection**: Throughout all layers
+Design patterns we'll use:
+- Repository pattern for database access
+- Service layer for business logic  
+- DTO pattern to separate API from database models
+- Factory pattern for creating objects
+- Strategy pattern for notifications
 
-## Key Features
+We'll make sure to follow these properly in implementation phase.
 
-1. **User Management**
-   - JWT-based authentication
-   - Role-based access control (Admin, Project Manager, Team Member)
-   - Profile management
+## Main Features
 
-2. **Project Management**
-   - Create and manage projects
-   - Team member assignment
-   - Progress tracking
+1. User Management
+   - Register and login
+   - Three roles: Admin, Project Manager, Team Member
+   - Profile page
 
-3. **Task Management**
-   - CRUD operations
-   - Priority levels (LOW, MEDIUM, HIGH, CRITICAL)
-   - Status tracking (TODO, IN_PROGRESS, REVIEW, DONE)
-   - Due date management
+2. Projects
+   - Create projects
+   - Add team members
+   - Track overall progress
 
-4. **Collaboration**
-   - Task comments
-   - Activity history
-   - Email notifications
+3. Tasks
+   - Create, edit, delete tasks
+   - Set priority (Low, Medium, High, Critical)
+   - Status: TODO, In Progress, Review, Done
+   - Set due dates
 
-5. **Analytics**
-   - Task completion statistics
-   - Team productivity metrics
-   - Project progress visualization
+4. Collaboration
+   - Add comments on tasks
+   - Get email notifications
+   - See who's working on what
 
-## Database Schema
+5. Dashboard
+   - See your assigned tasks
+   - View project statistics
+   - Check overdue tasks
 
-The application uses PostgreSQL with a normalized schema (3NF) including:
-- **USERS**: User accounts and authentication
-- **PROJECTS**: Project information
-- **PROJECT_MEMBERS**: Team membership (junction table)
-- **TASKS**: Task details and assignments
-- **COMMENTS**: Task discussions
-- **NOTIFICATIONS**: User notifications
+## Database
 
-## Getting Started
+Using PostgreSQL with these main tables:
+- USERS - stores user info and login credentials
+- PROJECTS - project details
+- PROJECT_MEMBERS - which users are in which projects
+- TASKS - task information
+- COMMENTS - comments on tasks
+- NOTIFICATIONS - user notifications
 
-### Prerequisites
-- Java 17+
-- Maven 3.8+
-- PostgreSQL 15+
-- Node.js 18+
-- npm or yarn
+## Setup (will implement later)
 
-### Backend Setup
-```bash
-# Clone the repository
-git clone <repository-url>
-cd taskflow
+Need to install:
+- Java 17
+- Maven
+- PostgreSQL
+- Node.js
 
-# Configure database in application.properties
-# spring.datasource.url=jdbc:postgresql://localhost:5432/taskflow
-# spring.datasource.username=your_username
-# spring.datasource.password=your_password
+Will add detailed setup instructions once we start coding.
 
-# Build and run
-mvn clean install
-mvn spring-boot:run
-```
+## API Endpoints (planned)
 
-### Frontend Setup
-```bash
-cd frontend
-npm install
-npm start
-```
+Authentication:
+- POST /api/auth/register
+- POST /api/auth/login
 
-## API Endpoints
+Projects:
+- GET /api/projects
+- POST /api/projects
+- GET /api/projects/{id}
+- PUT /api/projects/{id}
+- DELETE /api/projects/{id}
 
-### Authentication
-- `POST /api/auth/register` - User registration
-- `POST /api/auth/login` - User login
+Tasks:
+- GET /api/tasks
+- POST /api/tasks
+- GET /api/tasks/{id}
+- PUT /api/tasks/{id}
+- DELETE /api/tasks/{id}
 
-### Projects
-- `GET /api/projects` - List all projects
-- `POST /api/projects` - Create project
-- `GET /api/projects/{id}` - Get project details
-- `PUT /api/projects/{id}` - Update project
-- `DELETE /api/projects/{id}` - Delete project
+Comments:
+- GET /api/tasks/{taskId}/comments
+- POST /api/tasks/{taskId}/comments
 
-### Tasks
-- `GET /api/tasks` - List all tasks
-- `POST /api/tasks` - Create task
-- `GET /api/tasks/{id}` - Get task details
-- `PUT /api/tasks/{id}` - Update task
-- `DELETE /api/tasks/{id}` - Delete task
+## Team Members
 
-### Comments
-- `GET /api/tasks/{taskId}/comments` - Get task comments
-- `POST /api/tasks/{taskId}/comments` - Add comment
-- `PUT /api/comments/{id}` - Update comment
-- `DELETE /api/comments/{id}` - Delete comment
+[Add your names here]
 
-## Team
+## Timeline
 
-[Add your team member names and roles here]
+- Milestone 1: Project idea and diagrams (Done)
+- Milestone 2: Start backend implementation
+- Milestone 3: Complete and test everything
 
-## Project Timeline
+## Notes
 
-- **Milestone 1**: Idea and diagrams submission (Completed)
-- **Milestone 2**: Implementation (Coming soon)
-- **Milestone 3**: Testing and deployment (Coming soon)
+This is for our SESD course project. We've completed the planning and diagrams for milestone 1. Implementation will start in milestone 2.
 
-## License
-
-This project is created for educational purposes as part of the SESD course.
-
----
-
-**Note**: This is Milestone-1 submission focusing on project planning and design. Implementation will follow in subsequent milestones.
+Backend will be the main focus (75% marks) so we're putting more effort there. We'll make sure to use proper OOP principles and design patterns as required.
