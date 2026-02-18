@@ -4,7 +4,7 @@
 
 A full-stack task management application built with Spring Boot and React, emphasizing software engineering principles, OOP concepts, and design patterns.
 
-## 📋 Project Documentation
+## Project Documentation
 
 This repository contains the complete project documentation for Milestone-1:
 
@@ -14,7 +14,7 @@ This repository contains the complete project documentation for Milestone-1:
 - **[classDiagram.md](./docs/classDiagram.md)** - Class diagram with OOP principles and design patterns
 - **[ErDiagram.md](./docs/ErDiagram.md)** - Entity-relationship diagram with database schema
 
-## 🎯 Project Overview
+## Project Overview
 
 TaskFlow is a collaborative task management system that enables teams to:
 - Create and manage projects
@@ -23,7 +23,7 @@ TaskFlow is a collaborative task management system that enables teams to:
 - Receive real-time notifications
 - View analytics and progress metrics
 
-## 🏗️ Architecture
+## Architecture
 
 ### Backend (75% Focus)
 - **Language**: Java 17
@@ -38,24 +38,24 @@ TaskFlow is a collaborative task management system that enables teams to:
 - **State Management**: Redux Toolkit
 - **UI Library**: Material-UI (MUI)
 
-## 🎨 Software Engineering Practices
+## Software Engineering Practices
 
 ### OOP Principles
-- ✅ **Encapsulation**: Private fields with controlled access
-- ✅ **Abstraction**: Interface-based repository and service layers
-- ✅ **Inheritance**: Base entity classes for common fields
-- ✅ **Polymorphism**: Strategy pattern for notifications
+- **Encapsulation**: Private fields with controlled access
+- **Abstraction**: Interface-based repository and service layers
+- **Inheritance**: Base entity classes for common fields
+- **Polymorphism**: Strategy pattern for notifications
 
 ### Design Patterns
-- 🔹 **Repository Pattern**: Data access abstraction
-- 🔹 **Service Layer Pattern**: Business logic separation
-- 🔹 **DTO Pattern**: API contract decoupling
-- 🔹 **Factory Pattern**: Entity creation
-- 🔹 **Strategy Pattern**: Notification delivery
-- 🔹 **Observer Pattern**: Event-driven notifications
-- 🔹 **Dependency Injection**: Throughout all layers
+- **Repository Pattern**: Data access abstraction
+- **Service Layer Pattern**: Business logic separation
+- **DTO Pattern**: API contract decoupling
+- **Factory Pattern**: Entity creation
+- **Strategy Pattern**: Notification delivery
+- **Observer Pattern**: Event-driven notifications
+- **Dependency Injection**: Throughout all layers
 
-## 📊 Key Features
+## Key Features
 
 1. **User Management**
    - JWT-based authentication
@@ -83,7 +83,7 @@ TaskFlow is a collaborative task management system that enables teams to:
    - Team productivity metrics
    - Project progress visualization
 
-## 🗂️ Database Schema
+## Database Schema
 
 The application uses PostgreSQL with a normalized schema (3NF) including:
 - **USERS**: User accounts and authentication
@@ -93,7 +93,7 @@ The application uses PostgreSQL with a normalized schema (3NF) including:
 - **COMMENTS**: Task discussions
 - **NOTIFICATIONS**: User notifications
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Java 17+
@@ -125,7 +125,7 @@ npm install
 npm start
 ```
 
-## 📝 API Endpoints
+## API Endpoints
 
 ### Authentication
 - `POST /api/auth/register` - User registration
@@ -151,17 +151,17 @@ npm start
 - `PUT /api/comments/{id}` - Update comment
 - `DELETE /api/comments/{id}` - Delete comment
 
-## 👥 Team
+## Team
 
 [Add your team member names and roles here]
 
-## 📅 Project Timeline
+## Project Timeline
 
-- **Milestone 1**: Idea and diagrams submission ✅
+- **Milestone 1**: Idea and diagrams submission (Completed)
 - **Milestone 2**: Implementation (Coming soon)
 - **Milestone 3**: Testing and deployment (Coming soon)
 
-## 📄 License
+## License
 
 This project is created for educational purposes as part of the SESD course.
 
