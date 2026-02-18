@@ -8,7 +8,6 @@ A full-stack task management application built with Spring Boot and React, empha
 
 This repository contains the complete project documentation for Milestone-1:
 
-- **[idea.md](./idea.md)** - Project concept, scope, features, and technology stack
 - **[useCaseDiagram.md](./useCaseDiagram.md)** - Use case diagram with actors and interactions
 - **[sequenceDiagram.md](./sequenceDiagram.md)** - Sequence diagram showing end-to-end flow
 - **[classDiagram.md](./classDiagram.md)** - Class diagram with OOP principles and design patterns
