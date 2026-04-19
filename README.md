@@ -1,142 +1,240 @@
 # Task Management System
 
-## SESD Project - Milestone 1
+## SESD Project - React Frontend Implementation
 
-A task management web application for teams to manage projects and tasks efficiently.
+A modern task management web application built with React and Material-UI for teams to manage projects and tasks efficiently.
 
-## Project Idea
+## 🚀 Features Implemented
 
-We're building a task management system where teams can create projects, assign tasks to members, track progress, and collaborate. Think of it like a simplified version of Jira or Trello but focused on core features.
+### ✅ User Authentication
+- Login and Registration forms
+- Role-based access (Admin, Project Manager, Team Member)
+- Protected routes with authentication context
+- Local storage for session persistence
 
-Main features we plan to implement:
-- User login/signup with different roles (admin, manager, team member)
-- Create projects and add team members
-- Create tasks, assign them, set priorities and deadlines
-- Comment on tasks for discussion
-- Dashboard to see task statistics
-- Email notifications when tasks are assigned
+### ✅ Dashboard
+- Overview statistics (projects, tasks, completion rates)
+- Recent tasks display
+- Project progress tracking
+- Role-based content visibility
 
-## Documentation Files
+### ✅ Project Management
+- Create, edit, and delete projects
+- Project status tracking (Active, Completed, Archived)
+- Team member management
+- Progress visualization with completion percentages
 
-- [useCaseDiagram.md](./useCaseDiagram.md) - Shows different user types and what they can do
-- [sequenceDiagram.md](./sequenceDiagram.md) - How task creation works step by step
-- [classDiagram.md](./classDiagram.md) - Backend structure with classes and relationships
-- [ErDiagram.md](./ErDiagram.md) - Database tables and how they connect
+### ✅ Task Management
+- Create, edit, and delete tasks
+- Task assignment to team members
+- Priority levels (Low, Medium, High, Critical)
+- Status tracking (TODO, In Progress, Review, Done)
+- Due date management
+- Task filtering (All, My Tasks, Active, Completed)
+- Comments system for collaboration
 
-## Tech Stack
+### ✅ User Profile
+- Personal information management
+- Password change functionality
+- Role display and management
+- Profile picture with initials
 
-### Backend (main focus - 75%)
-- Java with Spring Boot
-- PostgreSQL database
-- JWT for authentication
-- Hibernate for database operations
+### ✅ Modern UI/UX
+- Material-UI components for consistent design
+- Responsive layout for all screen sizes
+- Dark/light theme support
+- Intuitive navigation with sidebar
+- Loading states and error handling
 
-### Frontend (25%)
-- React for UI
-- Material-UI for components
-- Axios for API calls
+## 🛠️ Tech Stack
 
-## OOP & Design Patterns
+### Frontend
+- **React 18** - Modern React with hooks
+- **Material-UI (MUI) 5** - Component library and theming
+- **React Router 6** - Client-side routing
+- **Day.js** - Date manipulation
+- **Context API** - State management for authentication
 
-We're using proper OOP concepts:
-- Encapsulation - keeping data private with getters/setters
-- Abstraction - using interfaces for repositories
-- Inheritance - base entity class for common fields like id, timestamps
-- Polymorphism - different notification types (email, in-app)
+### Development Tools
+- **Create React App** - Build tooling
+- **ESLint** - Code linting
+- **React Scripts** - Development server
 
-Design patterns we'll use:
-- Repository pattern for database access
-- Service layer for business logic  
-- DTO pattern to separate API from database models
-- Factory pattern for creating objects
-- Strategy pattern for notifications
+## 📁 Project Structure
 
-We'll make sure to follow these properly in implementation phase.
+```
+src/
+├── components/           # React components
+│   ├── Dashboard.js     # Main dashboard
+│   ├── Login.js         # Login form
+│   ├── Register.js      # Registration form
+│   ├── Projects.js      # Project management
+│   ├── Tasks.js         # Task management
+│   ├── Profile.js       # User profile
+│   └── Navbar.js        # Navigation bar
+├── context/             # React context
+│   └── AuthContext.js   # Authentication context
+├── App.js              # Main app component
+└── index.js            # App entry point
+```
 
-## Main Features
+## 🚀 Quick Start
 
-1. User Management
-   - Register and login
-   - Three roles: Admin, Project Manager, Team Member
-   - Profile page
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn
 
-2. Projects
-   - Create projects
-   - Add team members
-   - Track overall progress
+### Installation
 
-3. Tasks
-   - Create, edit, delete tasks
-   - Set priority (Low, Medium, High, Critical)
-   - Status: TODO, In Progress, Review, Done
-   - Set due dates
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd task-management-system
+   ```
 
-4. Collaboration
-   - Add comments on tasks
-   - Get email notifications
-   - See who's working on what
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-5. Dashboard
-   - See your assigned tasks
-   - View project statistics
-   - Check overdue tasks
+3. **Start the development server**
+   ```bash
+   npm start
+   ```
 
-## Database
+4. **Open your browser**
+   Navigate to `http://localhost:3000`
 
-Using PostgreSQL with these main tables:
-- USERS - stores user info and login credentials
-- PROJECTS - project details
-- PROJECT_MEMBERS - which users are in which projects
-- TASKS - task information
-- COMMENTS - comments on tasks
-- NOTIFICATIONS - user notifications
+### Available Scripts
 
-## Setup (will implement later)
+- `npm start` - Runs the app in development mode
+- `npm build` - Builds the app for production
+- `npm test` - Launches the test runner
+- `npm eject` - Ejects from Create React App (one-way operation)
 
-Need to install:
-- Java 17
-- Maven
-- PostgreSQL
-- Node.js
+## 👤 Demo Users
 
-Will add detailed setup instructions once we start coding.
+The app uses mock authentication. You can login with any email/password combination:
 
-## API Endpoints (planned)
+- **Admin User**: Any email with role selection
+- **Project Manager**: Can create/manage projects and tasks
+- **Team Member**: Can view and update assigned tasks
 
-Authentication:
-- POST /api/auth/register
-- POST /api/auth/login
+## 🎯 Key Features Demo
 
-Projects:
-- GET /api/projects
-- POST /api/projects
-- GET /api/projects/{id}
-- PUT /api/projects/{id}
-- DELETE /api/projects/{id}
+### Authentication Flow
+1. Visit the app - redirects to login
+2. Register a new account or login
+3. Choose your role during registration
+4. Access role-based features
 
-Tasks:
-- GET /api/tasks
-- POST /api/tasks
-- GET /api/tasks/{id}
-- PUT /api/tasks/{id}
-- DELETE /api/tasks/{id}
+### Project Management
+1. Navigate to Projects tab
+2. Create new project (Project Manager/Admin only)
+3. View project progress and statistics
+4. Edit or delete projects
 
-Comments:
-- GET /api/tasks/{taskId}/comments
-- POST /api/tasks/{taskId}/comments
+### Task Management
+1. Navigate to Tasks tab
+2. Create new tasks with assignments
+3. Filter tasks by status or assignee
+4. Update task status and add comments
+5. Set priorities and due dates
 
-## Team Members
+### Dashboard Overview
+1. View summary statistics
+2. See recent task activity
+3. Monitor project progress
+4. Quick access to overdue items
 
-[Add your names here]
+## 🔧 Customization
 
-## Timeline
+### Theming
+The app uses Material-UI's theming system. Modify `src/index.js` to customize:
 
-- Milestone 1: Project idea and diagrams (Done)
-- Milestone 2: Start backend implementation
-- Milestone 3: Complete and test everything
+```javascript
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#1976d2', // Change primary color
+    },
+    secondary: {
+      main: '#dc004e', // Change secondary color
+    },
+  },
+});
+```
 
-## Notes
+### Adding New Features
+1. Create new components in `src/components/`
+2. Add routes in `src/App.js`
+3. Update navigation in `src/components/Navbar.js`
+4. Extend context if needed
 
-This is for our SESD course project. We've completed the planning and diagrams for milestone 1. Implementation will start in milestone 2.
+## 📱 Responsive Design
 
-Backend will be the main focus (75% marks) so we're putting more effort there. We'll make sure to use proper OOP principles and design patterns as required.
+The application is fully responsive and works on:
+- Desktop computers (1200px+)
+- Tablets (768px - 1199px)
+- Mobile phones (320px - 767px)
+
+## 🔒 Security Features
+
+- Protected routes with authentication
+- Role-based access control
+- Form validation
+- XSS protection through React
+- Secure local storage usage
+
+## 🚀 Production Deployment
+
+### Build for Production
+```bash
+npm run build
+```
+
+### Deploy to Static Hosting
+The build folder can be deployed to:
+- Netlify
+- Vercel
+- GitHub Pages
+- AWS S3
+- Any static hosting service
+
+## 📋 Future Enhancements
+
+### Backend Integration
+- Connect to REST API
+- Real-time updates with WebSocket
+- File upload functionality
+- Email notifications
+
+### Additional Features
+- Advanced filtering and search
+- Gantt chart view
+- Time tracking
+- Team chat integration
+- Mobile app version
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## 📄 License
+
+This project is created for educational purposes as part of the SESD course.
+
+## 📞 Support
+
+For questions or issues:
+1. Check the documentation
+2. Review existing issues
+3. Create a new issue with detailed description
+
+---
+
+**Note**: This is a frontend-only implementation with mock data. For a complete solution, integrate with a backend API following the original project specifications in the documentation files.
