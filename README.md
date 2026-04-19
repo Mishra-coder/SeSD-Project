@@ -1,97 +1,151 @@
 # Task Management System
 
-## SESD Project - React Frontend Implementation
+A comprehensive full-stack task management web application built with React and Express.js for teams to efficiently manage projects, tasks, and collaboration.
 
-A modern task management web application built with React and Material-UI for teams to manage projects and tasks efficiently.
+## Project Overview
 
-## Features Implemented
+This system enables teams to organize their work through projects and tasks, with role-based access control, real-time collaboration features, and an intuitive user interface. The application follows modern software engineering principles with a clear separation between frontend and backend layers.
 
-### User Authentication
-- Login and Registration forms
-- Role-based access (Admin, Project Manager, Team Member)
-- Protected routes with authentication context
-- Local storage for session persistence
-
-### Dashboard
-- Overview statistics (projects, tasks, completion rates)
-- Recent tasks display with avatars
-- Project progress tracking with visual indicators
-- Role-based content visibility
-- Trend indicators showing growth percentages
-
-### Project Management
-- Create, edit, and delete projects
-- Project status tracking (Active, Completed, Archived)
-- Team member count display
-- Progress visualization with completion percentages
-- Color-coded progress bars
-
-### Task Management
-- Create, edit, and delete tasks
-- Task assignment to team members
-- Priority levels (Low, Medium, High, Critical)
-- Status tracking (TODO, In Progress, Review, Done)
-- Due date management with date picker
-- Task filtering (All Tasks, My Tasks, Active, Completed)
-- Comments system for collaboration
-- Avatar display for assignees
-
-### User Profile
-- Personal information management
-- Password change functionality
-- Role display and management
-- Profile picture with user initials
-- Account settings
-
-### Modern UI/UX
-- Beautiful gradient theme (Purple/Indigo)
-- Material-UI components for consistent design
-- Responsive layout for all screen sizes
-- Glassmorphism effects and modern card designs
-- Smooth animations and hover effects
-- Professional Inter font typography
-- Notification badge in navigation
-- Loading states and error handling
-
-## Tech Stack
+## Architecture
 
 ### Frontend
-- React 18 - Modern React with hooks
-- Material-UI (MUI) 5 - Component library and theming
-- React Router 6 - Client-side routing
-- Day.js - Date manipulation
-- Context API - State management for authentication
+Modern React application with Material-UI components providing an interactive and responsive user experience.
+
+### Backend
+RESTful API built with Express.js and PostgreSQL database, implementing secure authentication and comprehensive data management.
+
+### Key Design Patterns
+- Repository Pattern for data access layer
+- Service Layer for business logic separation
+- DTO Pattern for API data transfer
+- Factory Pattern for object creation
+- Strategy Pattern for flexible implementations
+
+## Features
+
+### User Management
+- Secure registration and authentication system
+- Role-based access control (Admin, Project Manager, Team Member)
+- User profile management with password change capability
+- Session persistence with JWT tokens
+
+### Project Management
+- Create and organize multiple projects
+- Project status tracking (Active, Completed, Archived)
+- Team member assignment and management
+- Visual progress tracking with completion percentages
+- Project ownership and access control
+
+### Task Management
+- Comprehensive task creation and assignment
+- Priority levels (Low, Medium, High, Critical)
+- Status workflow (TODO, In Progress, Review, Done)
+- Due date management with calendar integration
+- Task filtering and search capabilities
+- Comment system for task discussions
+
+### Dashboard and Analytics
+- Overview statistics for projects and tasks
+- Recent activity tracking
+- Progress visualization with charts
+- Overdue task monitoring
+- Trend indicators and growth metrics
+
+### User Interface
+- Modern gradient-based design theme
+- Responsive layout for all device sizes
+- Smooth animations and transitions
+- Glassmorphism effects for modern aesthetics
+- Professional typography with Inter font family
+- Intuitive navigation and user flows
+
+## Technology Stack
+
+### Frontend Technologies
+- React 18 with Hooks for component logic
+- Material-UI 5 for UI components and theming
+- React Router 6 for client-side routing
+- Context API for state management
+- Day.js for date manipulation
+- Axios for HTTP requests
+
+### Backend Technologies
+- Node.js runtime environment
+- Express.js web framework
+- PostgreSQL relational database
+- Sequelize ORM for database operations
+- JWT for authentication
+- Bcrypt for password hashing
 
 ### Development Tools
-- Create React App - Build tooling
-- ESLint - Code linting
-- React Scripts - Development server
+- Create React App for frontend build
+- Nodemon for backend development
+- ESLint for code quality
+- Git for version control
 
 ## Project Structure
 
 ```
-src/
-├── components/
-│   ├── Dashboard.js     - Main dashboard with statistics
-│   ├── Login.js         - Login form with validation
-│   ├── Register.js      - Registration form
-│   ├── Projects.js      - Project management interface
-│   ├── Tasks.js         - Task management with filters
-│   ├── Profile.js       - User profile settings
-│   └── Navbar.js        - Navigation bar with menu
-├── context/
-│   └── AuthContext.js   - Authentication context provider
-├── App.js               - Main app component with routing
-└── index.js             - App entry point with theme
+project-root/
+├── src/                          Frontend source code
+│   ├── components/               React components
+│   │   ├── Dashboard.js         Main dashboard with statistics
+│   │   ├── Login.js             Authentication login form
+│   │   ├── Register.js          User registration form
+│   │   ├── Projects.js          Project management interface
+│   │   ├── Tasks.js             Task management with filters
+│   │   ├── Profile.js           User profile settings
+│   │   └── Navbar.js            Navigation bar component
+│   ├── context/                  React context providers
+│   │   └── AuthContext.js       Authentication state management
+│   ├── App.js                    Main application component
+│   └── index.js                  Application entry point
+├── backend/                      Backend API source code
+│   ├── config/                   Configuration files
+│   │   └── database.js          Database connection setup
+│   ├── models/                   Sequelize models
+│   │   ├── User.js              User model with authentication
+│   │   ├── Project.js           Project model
+│   │   ├── Task.js              Task model
+│   │   ├── Comment.js           Comment model
+│   │   ├── Notification.js      Notification model
+│   │   ├── ProjectMember.js     Project membership model
+│   │   └── index.js             Model associations
+│   ├── controllers/              Business logic controllers
+│   │   ├── auth.controller.js   Authentication logic
+│   │   ├── user.controller.js   User management
+│   │   ├── project.controller.js Project operations
+│   │   ├── task.controller.js   Task operations
+│   │   ├── comment.controller.js Comment handling
+│   │   └── notification.controller.js Notifications
+│   ├── routes/                   API route definitions
+│   │   ├── auth.routes.js       Authentication routes
+│   │   ├── user.routes.js       User routes
+│   │   ├── project.routes.js    Project routes
+│   │   ├── task.routes.js       Task routes
+│   │   ├── comment.routes.js    Comment routes
+│   │   └── notification.routes.js Notification routes
+│   ├── middleware/               Custom middleware
+│   │   └── auth.js              JWT authentication middleware
+│   ├── utils/                    Utility functions
+│   │   └── generateToken.js     JWT token generation
+│   ├── server.js                 Express server setup
+│   └── package.json              Backend dependencies
+├── public/                       Static files
+├── package.json                  Frontend dependencies
+├── vercel.json                   Vercel deployment config
+└── README.md                     Project documentation
 ```
 
 ## Installation and Setup
 
 ### Prerequisites
-- Node.js (v16 or higher)
-- npm or yarn
+- Node.js version 16 or higher
+- PostgreSQL version 12 or higher
+- npm or yarn package manager
+- Git for version control
 
-### Local Development
+### Frontend Setup
 
 1. Clone the repository
 ```bash
@@ -99,7 +153,7 @@ git clone https://github.com/Mishra-coder/SeSD-Project.git
 cd SeSD-Project
 ```
 
-2. Install dependencies
+2. Install frontend dependencies
 ```bash
 npm install
 ```
@@ -109,184 +163,277 @@ npm install
 npm start
 ```
 
-4. Open your browser and navigate to
-```
-http://localhost:3000
-```
+The application will open at http://localhost:3000
 
-### Build for Production
+### Backend Setup
 
-Create an optimized production build:
+1. Navigate to backend directory
 ```bash
-npm run build
+cd backend
 ```
 
-The build folder will contain the production-ready files.
-
-## Deployment on Vercel
-
-### Method 1: Deploy via Vercel Dashboard (Recommended)
-
-1. Go to https://vercel.com and sign up/login
-2. Click "Add New Project"
-3. Import your GitHub repository (https://github.com/Mishra-coder/SeSD-Project)
-4. Vercel will automatically detect it's a React app
-5. Click "Deploy"
-6. Your app will be live in 2-3 minutes
-
-### Method 2: Deploy via Vercel CLI
-
-1. Install Vercel CLI globally
+2. Install backend dependencies
 ```bash
-npm install -g vercel
+npm install
 ```
 
-2. Login to Vercel
+3. Create PostgreSQL database
 ```bash
-vercel login
+createdb taskmanagement
 ```
 
-3. Deploy from project directory
+4. Configure environment variables
 ```bash
-vercel
+cp .env.example .env
 ```
 
-4. Follow the prompts:
-   - Set up and deploy? Yes
-   - Which scope? Select your account
-   - Link to existing project? No
-   - Project name? (press enter for default)
-   - Directory? ./ (press enter)
-   - Override settings? No
+Edit the .env file with your configuration:
+```
+PORT=5000
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=taskmanagement
+DB_USER=postgres
+DB_PASSWORD=your_password
+JWT_SECRET=your_secret_key
+JWT_EXPIRE=24h
+```
 
-5. For production deployment
+5. Start the backend server
 ```bash
-vercel --prod
+npm start
 ```
 
-### Vercel Configuration
-
-Create a `vercel.json` file in the root directory (optional):
-```json
-{
-  "buildCommand": "npm run build",
-  "outputDirectory": "build",
-  "devCommand": "npm start",
-  "framework": "create-react-app"
-}
+For development with auto-reload:
+```bash
+npm run dev
 ```
 
-### Environment Variables (if needed)
+The API will be available at http://localhost:5000
 
-If you add backend API later, set environment variables in Vercel:
-1. Go to your project in Vercel Dashboard
-2. Click "Settings"
-3. Click "Environment Variables"
-4. Add your variables (e.g., REACT_APP_API_URL)
+## Database Schema
 
-## Usage
+### Core Tables
 
-### Demo Login
-The app uses mock authentication. You can login with any email and password:
-- Email: any valid email format
-- Password: any password
+Users - Stores user accounts and authentication data
+Projects - Contains project information and ownership
+Tasks - Manages task details and assignments
+Comments - Stores task discussion comments
+Notifications - Handles user notifications
+ProjectMembers - Links users to projects (many-to-many)
 
-### User Roles
-During registration, you can select:
-- Team Member - Can view and update assigned tasks
-- Project Manager - Can create projects and manage tasks
-- Admin - Full access to all features
+### Relationships
 
-### Key Features Demo
+- Users own multiple Projects (one-to-many)
+- Users belong to multiple Projects through ProjectMembers (many-to-many)
+- Projects contain multiple Tasks (one-to-many)
+- Users are assigned multiple Tasks (one-to-many)
+- Tasks have multiple Comments (one-to-many)
+- Users write multiple Comments (one-to-many)
+- Users receive multiple Notifications (one-to-many)
 
-1. Authentication Flow
-   - Register a new account with your preferred role
-   - Login with your credentials
-   - Access role-based features
+## API Documentation
 
-2. Dashboard
-   - View project and task statistics
-   - See recent task activity
-   - Monitor project progress
-   - Check overdue items
+### Authentication Endpoints
 
-3. Project Management
-   - Navigate to Projects tab
-   - Create new projects (Project Manager/Admin only)
-   - Edit project details
-   - Track progress and team members
+POST /api/auth/register - Create new user account
+POST /api/auth/login - Authenticate and receive token
 
-4. Task Management
-   - Navigate to Tasks tab
-   - Create tasks with assignments
-   - Set priorities and due dates
-   - Filter tasks by status
-   - Update task status
-   - View and add comments
+### User Endpoints
 
-5. Profile Settings
-   - Update personal information
-   - Change password
-   - Manage account settings
+GET /api/users/me - Get current user profile
+PUT /api/users/me - Update profile information
+PUT /api/users/me/password - Change password
+GET /api/users - List all users (Admin only)
 
-## Browser Support
+### Project Endpoints
 
-- Chrome (latest)
-- Firefox (latest)
+GET /api/projects - Retrieve all projects
+POST /api/projects - Create new project
+GET /api/projects/:id - Get specific project
+PUT /api/projects/:id - Update project details
+DELETE /api/projects/:id - Remove project
+POST /api/projects/:id/members - Add team member
+DELETE /api/projects/:id/members/:userId - Remove member
+
+### Task Endpoints
+
+GET /api/tasks - List tasks with optional filters
+POST /api/tasks - Create new task
+GET /api/tasks/:id - Get task details
+PUT /api/tasks/:id - Update task
+DELETE /api/tasks/:id - Remove task
+
+### Comment Endpoints
+
+GET /api/comments - List comments
+POST /api/comments - Add new comment
+PUT /api/comments/:id - Update comment
+DELETE /api/comments/:id - Remove comment
+
+### Notification Endpoints
+
+GET /api/notifications - Get user notifications
+PUT /api/notifications/:id/read - Mark as read
+PUT /api/notifications/read-all - Mark all as read
+
+## Authentication
+
+Protected routes require JWT token in the Authorization header:
+```
+Authorization: Bearer <your_jwt_token>
+```
+
+## User Roles and Permissions
+
+### Team Member
+- View assigned tasks
+- Update task status
+- Add comments to tasks
+- Manage personal profile
+
+### Project Manager
+All Team Member permissions plus:
+- Create and manage projects
+- Create and assign tasks
+- Add/remove team members
+- Delete tasks and comments
+
+### Administrator
+All permissions including:
+- Manage all users
+- Access all projects
+- System-wide configuration
+
+## Deployment
+
+### Frontend Deployment on Vercel
+
+1. Push code to GitHub repository
+2. Visit https://vercel.com and sign in
+3. Import the GitHub repository
+4. Vercel auto-detects React configuration
+5. Click Deploy
+
+The application will be live with automatic deployments on every push.
+
+### Backend Deployment Options
+
+Recommended platforms:
+- Heroku - Easy PostgreSQL integration
+- Railway - Modern deployment platform
+- DigitalOcean - Full control with droplets
+- AWS - Enterprise-grade infrastructure
+
+## Development Workflow
+
+### Frontend Development
+```bash
+npm start          # Start development server
+npm run build      # Create production build
+npm test           # Run test suite
+```
+
+### Backend Development
+```bash
+npm run dev        # Start with nodemon
+npm start          # Start production server
+```
+
+## Testing
+
+### Manual Testing
+Use Postman or Thunder Client to test API endpoints with the provided collection.
+
+### Frontend Testing
+Test user flows through the application interface with different user roles.
+
+## Security Features
+
+- Password hashing with bcrypt (10 rounds)
+- JWT token-based authentication
+- Role-based access control (RBAC)
+- Input validation on all endpoints
+- SQL injection prevention via Sequelize ORM
+- XSS protection through React
+- CORS configuration for API security
+
+## Browser Compatibility
+
+- Google Chrome (latest)
+- Mozilla Firefox (latest)
 - Safari (latest)
-- Edge (latest)
+- Microsoft Edge (latest)
+- Mobile browsers (iOS Safari, Chrome Mobile)
 
 ## Future Enhancements
 
-### Backend Integration
-- Connect to REST API
-- Real-time updates with WebSocket
-- File upload functionality
-- Email notifications
-- Database persistence
-
-### Additional Features
+### Planned Features
+- Real-time updates with WebSocket integration
+- File attachment support for tasks
+- Email notification system
 - Advanced search and filtering
-- Gantt chart view
-- Time tracking
+- Gantt chart visualization
+- Time tracking functionality
 - Team chat integration
-- Export reports
-- Mobile app version
+- Mobile application (React Native)
+- Export functionality (PDF, Excel)
+- Calendar view for tasks
+- Activity logs and audit trails
+
+### Technical Improvements
+- Unit and integration testing
+- CI/CD pipeline setup
+- Performance optimization
+- Caching implementation
+- Rate limiting
+- API documentation with Swagger
+- Docker containerization
 
 ## Documentation Files
 
-This project includes detailed documentation:
-- useCaseDiagram.md - User roles and capabilities
-- sequenceDiagram.md - Task creation workflow
-- classDiagram.md - Backend structure design
+Additional documentation available:
+- useCaseDiagram.md - User roles and use cases
+- sequenceDiagram.md - System interaction flows
+- classDiagram.md - Backend architecture design
 - ErDiagram.md - Database schema design
+- backend/README.md - Backend API documentation
 
 ## Contributing
 
 1. Fork the repository
 2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
-## License
-
-This project is created for educational purposes as part of the SESD course.
+3. Commit your changes with clear messages
+4. Push to your branch
+5. Submit a pull request with description
 
 ## Team Members
 
-Add your team member names here
+Add team member information here
 
-## Contact
+## License
 
-For questions or issues, please create an issue in the GitHub repository.
+This project is developed for educational purposes as part of the Software Engineering and System Design (SESD) course.
 
 ## Acknowledgments
 
-- Material-UI for the component library
-- React team for the amazing framework
-- Create React App for the build setup
+- Material-UI team for the component library
+- React team for the framework
+- Express.js community
+- PostgreSQL development team
+- All open-source contributors
 
----
+## Contact and Support
 
-Note: This is a frontend-only implementation with mock data. For a complete solution, integrate with a backend API following the specifications in the documentation files.
+For questions, issues, or contributions:
+- Create an issue in the GitHub repository
+- Contact the development team
+- Review existing documentation
+
+## Project Status
+
+Current Version: 1.0.0
+Status: Active Development
+Last Updated: 2024
+
+This is a complete full-stack implementation with both frontend and backend ready for deployment and further development.
