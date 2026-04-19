@@ -98,11 +98,14 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # React build
-/frontend/build
-/frontend/.env.local
-/frontend/.env.development.local
-/frontend/.env.test.local
-/frontend/.env.production.local
+build/
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Vercel
+.vercel
 
 # Database
 *.db
