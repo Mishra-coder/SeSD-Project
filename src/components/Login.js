@@ -50,7 +50,6 @@ const Login = () => {
     setError('');
 
     try {
-      // Mock login - in real app, this would call API
       if (formData.email && formData.password) {
         const userData = {
           id: 1,
@@ -93,7 +92,6 @@ const Login = () => {
             backdropFilter: 'blur(10px)',
           }}
         >
-          {/* Header Section */}
           <Box
             sx={{
               background: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)',

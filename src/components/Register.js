@@ -44,7 +44,6 @@ const Register = () => {
     setError('');
 
     try {
-      // Validation
       if (!formData.firstName || !formData.lastName || !formData.email || !formData.password) {
         setError('Please fill in all fields');
         return;
@@ -60,7 +59,6 @@ const Register = () => {
         return;
       }
 
-      // Mock registration - in real app, this would call API
       const userData = {
         id: Date.now(),
         email: formData.email,

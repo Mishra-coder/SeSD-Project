@@ -53,7 +53,6 @@ const Profile = () => {
     setSuccess('');
 
     try {
-      // Mock API call - in real app, this would call backend
       const updatedUser = {
         ...user,
         firstName: formData.firstName,
@@ -93,7 +92,6 @@ const Profile = () => {
         return;
       }
 
-      // Mock API call - in real app, this would call backend
       setSuccess('Password changed successfully!');
       setFormData({
         ...formData,

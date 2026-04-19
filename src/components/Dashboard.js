@@ -44,7 +44,6 @@ const Dashboard = () => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    // Mock data - in real app, this would come from API
     setStats({
       totalProjects: 5,
       totalTasks: 23,

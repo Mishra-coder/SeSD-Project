@@ -43,7 +43,6 @@ const Projects = () => {
   });
 
   useEffect(() => {
-    // Mock data - in real app, this would come from API
     setProjects([
       {
         id: 1,
@@ -114,14 +113,12 @@ const Projects = () => {
 
   const handleSubmit = () => {
     if (selectedProject) {
-      // Update project
       setProjects(projects.map(p => 
         p.id === selectedProject.id 
           ? { ...p, ...formData }
           : p
       ));
     } else {
-      // Create new project
       const newProject = {
         id: Date.now(),
         ...formData,

@@ -71,7 +71,6 @@ const Tasks = () => {
   ];
 
   useEffect(() => {
-    // Mock data - in real app, this would come from API
     setTasks([
       {
         id: 1,
@@ -165,7 +164,6 @@ const Tasks = () => {
     const assignee = teamMembers.find(m => m.id === formData.assigneeId);
     
     if (selectedTask) {
-      // Update task
       setTasks(tasks.map(t => 
         t.id === selectedTask.id 
           ? { 
@@ -178,7 +176,6 @@ const Tasks = () => {
           : t
       ));
     } else {
-      // Create new task
       const newTask = {
         id: Date.now(),
         ...formData,
@@ -230,10 +227,10 @@ const Tasks = () => {
 
   const filterTasksByTab = (tasks, tabValue) => {
     switch (tabValue) {
-      case 0: return tasks; // All tasks
-      case 1: return tasks.filter(t => t.assignee === `${user?.firstName} ${user?.lastName}`); // My tasks
-      case 2: return tasks.filter(t => t.status !== 'DONE'); // Active tasks
-      case 3: return tasks.filter(t => t.status === 'DONE'); // Completed tasks
+      case 0: return tasks;
+      case 1: return tasks.filter(t => t.assignee === `${user?.firstName} ${user?.lastName}`);
+      case 2: return tasks.filter(t => t.status !== 'DONE');
+      case 3: return tasks.filter(t => t.status === 'DONE');
       default: return tasks;
     }
   };
