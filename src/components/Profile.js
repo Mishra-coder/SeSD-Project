@@ -13,11 +13,9 @@ import {
   InputLabel,
   Select,
   MenuItem,
-  Alert,
-  Paper
+  Alert
 } from '@mui/material';
 import {
-  Person as PersonIcon,
   Email as EmailIcon,
   Work as WorkIcon,
   Save as SaveIcon

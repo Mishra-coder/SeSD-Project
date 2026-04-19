@@ -18,7 +18,6 @@ import {
   Dashboard as DashboardIcon,
   Assignment as TaskIcon,
   Folder as ProjectIcon,
-  AccountCircle,
   ExitToApp,
   Person,
   Notifications,

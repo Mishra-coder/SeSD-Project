@@ -24,7 +24,6 @@ import {
   ListItem,
   ListItemText,
   ListItemAvatar,
-  Divider,
   Tab,
   Tabs
 } from '@mui/material';

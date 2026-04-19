@@ -13,14 +13,12 @@ import {
   ListItemIcon,
   Divider,
   Avatar,
-  Paper,
   IconButton,
   Button
 } from '@mui/material';
 import {
   Assignment as TaskIcon,
   Folder as ProjectIcon,
-  People as PeopleIcon,
   Warning as WarningIcon,
   CheckCircle as CheckIcon,
   TrendingUp as TrendingUpIcon,
